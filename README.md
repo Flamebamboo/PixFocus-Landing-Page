@@ -13,4 +13,9 @@ Additionally, Aura Hub includes an innovative feature to manage screen time:
 
 - **Screen Time Management**: Block certain apps to manage your screen time. Share your screen time usage with friends or followers to encourage mindful device use.
 
+## Screenshots
+
+![Aura Hub Home](/assets/HomePage.png)
+![Navigation Route](/assets/NavigationRoute.png)
+
 As a solo developer, I aim to keep the scope manageable but have more features planned for future updates.
