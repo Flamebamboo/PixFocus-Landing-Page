@@ -207,6 +207,12 @@
   flex-direction: column;
   gap: 1.5em;
 }
+
+.subheading {
+  width: 50%;
+  text-align: center;
+  padding-top: 2px;
+}
 .contact .info-con .waitlist-form input {
   width: 90%;
   height: 7vh;
