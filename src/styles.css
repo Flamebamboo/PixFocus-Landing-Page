@@ -255,16 +255,42 @@
 
 .footer {
   background-color: #000000;
-  color: #fff;
-  padding: 80px 0;
+  color: #ffffff;
+  padding: 20px 0;
   border-top: 1px solid #191919;
 }
 
-.footer p {
-  text-align: center;
-  font-size: 1rem;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: start;
-  margin-left: 10%;
+}
+
+.copyright {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.social-icon {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #cccccc;
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
