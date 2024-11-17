@@ -1,42 +1,37 @@
 :root {
+  /* Colors */
   --color1: 18, 113, 255;
   --color2: 221, 74, 255;
   --color3: 100, 220, 255;
   --color4: 200, 50, 50;
   --color5: 180, 180, 50;
   --color-interactive: 140, 100, 255;
+
+  /* Layout */
   --circle-size: 80%;
+  --container-max-width: 1200px;
+
+  /* Effects */
   --blending: hard-light;
+  --gradient-opacity: 0.5;
+  --transition-speed: 0.25s;
+
+  /* Spacing */
+  --spacing-sm: 0.5em;
+  --spacing-md: 1em;
+  --spacing-lg: 1.5em;
+
+  /* Components */
+  --button-bg: rgb(162, 119, 255);
+  --footer-border: #191919;
 }
 
-@keyframes moveInCircle {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes moveVertical {
-  0% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
+/* Base styles */
 .bg-color {
   background-color: black;
 }
 
+/* Gradient effects */
 .gradient-text {
   background: linear-gradient(90deg, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
@@ -44,12 +39,10 @@
 }
 
 .gradient-bg {
-  position: absolute; /* Change from fixed if it was fixed */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh; /* Limit to viewport height */
-  z-index: -1; /* Keep it behind content */
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  z-index: -1;
   overflow: hidden;
 }
 
@@ -66,7 +59,7 @@
   top: calc(50% - var(--circle-size) / 2);
   left: calc(50% - var(--circle-size) / 2);
   mix-blend-mode: var(--blending);
-  opacity: 0.5; /* reduced from 0.8 */
+  opacity: var(--gradient-opacity);
 }
 
 .gradient-bg .g1 {
@@ -140,20 +133,20 @@
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+/* Contact section */
 .contact {
-  width: 100%;
-  flex-wrap: wrap;
   display: flex;
   height: 100vh;
+  width: 100%;
   justify-content: space-between;
 }
 
 .contact .info-con {
-  width: 70%;
+  width: 60%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: var(--spacing-sm);
   align-items: center;
   justify-content: center;
 }
@@ -180,32 +173,47 @@
   }
 }
 .contact .img-con {
-  max-width: 30%;
+  max-width: 50%; /* Increased from 40% */
   display: flex;
   align-items: center;
-  background: radial-gradient(rgb(128, 8, 128, 0.4), rgb(36, 36, 180, 0.4));
   justify-content: center;
-  animation: colorAn 2s infinite;
+  height: 100vh;
+  overflow: visible; /* Allow overflow */
+  padding: 0; /* Remove padding */
 }
 
-@keyframes colorAn {
-  100% {
-    background-position: 500px;
-  }
-}
 .contact .img-con img {
-  max-width: 70%;
-  max-height: 70%;
+  width: 90%; /* Make it larger than container */
+  height: 90%; /* Make it larger than container */
+  object-fit: cover; /* Change to cover */
+  transform: scale(1.2); /* Make it even bigger */
 }
-.contact .info-con .waitlist-form {
+
+/* Form styles */
+.waitlist-form {
   width: 60%;
   height: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-self: center;
-  flex-direction: column;
-  gap: 1.5em;
+  gap: var(--spacing-lg);
+}
+
+.waitlist-form input,
+.waitlist-form button {
+  width: 90%;
+  height: 7vh;
+  border-radius: 5px;
+}
+
+.waitlist-form input {
+  color: black;
+  padding: 0 10px;
+}
+
+.waitlist-form button {
+  background-color: var(--button-bg);
 }
 
 .subheading {
@@ -213,45 +221,33 @@
   text-align: center;
   padding-top: 2px;
 }
-.contact .info-con .waitlist-form input {
-  width: 90%;
-  height: 7vh;
-  color: black;
-  border-radius: 5px;
-  padding: 0 10px;
-}
-.contact .info-con .waitlist-form button {
-  width: 90%;
-  border-radius: 5px;
-  height: 7vh;
-  background-color: rgb(162, 119, 255);
-}
+
 /* Media Query for smaller screens */
 @media (max-width: 600px) {
   .contact {
-    width: 100%;
-    flex-direction: column; /* Change to column on smaller screens */
-  }
-  .contact .info-con {
-    height: 40vh;
-    width: 100%;
-  }
-  .contact .img-con {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    height: 50vh;
-  }
-  .contact .img-con img {
-    max-width: 90%;
-    max-height: 90%;
+    flex-direction: column;
   }
 
-  .contact .info-con .waitlist-form {
+  .contact .info-con {
+    width: 100%;
+    height: 90vh;
+  }
+
+  .contact .img-con {
+    max-width: 100%;
+    height: 60vh; /* Increase from 50vh */
+    padding: 1rem;
+  }
+
+  .contact .img-con img {
     width: 100%;
     height: 100%;
-    gap: 1em;
+  }
+
+  .waitlist-form {
+    width: 100%;
+    height: 100%;
+    gap: var(--spacing-md);
   }
 
   .contact .info-con .heading h1 {
@@ -262,14 +258,14 @@
 .footer {
   background-color: #000000;
   color: #ffffff;
-  padding: 20px 0;
-  border-top: 1px solid #191919;
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid var(--footer-border);
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--spacing-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -297,6 +293,29 @@
 @media (max-width: 600px) {
   .footer-container {
     flex-direction: column;
-    gap: 16px;
+    gap: var(--spacing-md);
+  }
+}
+
+/* Animations */
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0%,
+  100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
   }
 }
