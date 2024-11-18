@@ -16,10 +16,10 @@
   <!-- Body -->
   <body class="bg-gradient-to-r from-[#1A1A1D] to-[#000B58] text-white">
     <!-- Navbar -->
-    <nav id="navbar" class="p-8 fixed w-full top-0 z-10 transition duration-300">
-      <div class="container mx-auto flex justify-between items-center">
-        <a href="#" class="text-2xl font-readex-pro">AuraHub</a>
-        <div class="space-x-9 font-readex-pro">
+    <nav id="navbar" class="p-4 md:p-8 fixed w-full top-0 z-10 transition duration-300">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <a href="#" class="text-xl md:text-2xl font-readex-pro mb-4 md:mb-0">AuraHub</a>
+        <div class="space-x-4 md:space-x-9 font-readex-pro text-sm md:text-base">
           <a href="#features" class="hover:text-gray-300 underline-animation">Home</a>
           <a href="#benefits" class="hover:text-gray-300 underline-animation">Features</a>
           <a href="#contact" class="hover:text-gray-300 underline-animation">Waitlist</a>
@@ -29,7 +29,7 @@
 
     <!-- Hero Section -->
     <section
-      class="min-h-screen flex flex-col md:flex-row justify-center items-center text-left pt-16 px-8 md:px-16">
+      class="min-h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left pt-32 md:pt-24 px-4 md:px-16">
       <div class="gradient-bg">
         <div class="gradients-container">
           <div class="gradient g1"></div>
@@ -37,8 +37,8 @@
           <div class="interactive"></div>
         </div>
       </div>
-      <div class="md:w-1/2 pl-10">
-        <h1 class="text-5xl md:text-7xl font-extrabold font-baloo-bhaijaan">
+      <div class="md:w-1/2 pl-0 md:pl-10 mb-8 md:mb-0">
+        <h1 class="text-4xl md:text-7xl font-extrabold font-baloo-bhaijaan">
           A platform for
           <span
             id="animated-text"
@@ -46,7 +46,7 @@
             students
           </span>
         </h1>
-        <p class="text-xl md:text-xl mb-8 pt-8 font-baloo-bhai">
+        <p class="text-lg md:text-xl mb-8 pt-4 md:pt-8 font-baloo-bhai">
           Connect, Learn, and Gain Aura Together
         </p>
         <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -61,40 +61,39 @@
           </button>
         </div>
       </div>
-      <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
-        <img src="./src/images/getstarted.png" alt="App Preview" class="max-w-xs md:max-w-sm" />
+      <div class="md:w-1/2 flex justify-center">
+        <img src="./src/images/getstarted.png" alt="App Preview" class="w-3/4 md:max-w-sm" />
       </div>
     </section>
 
     <!-- New Section -->
-    <section class="min-h-screen flex flex-row px-8 md:px-16 bg-[#0f1234]">
-      
-        <!-- Image on the left -->
-        <div class="md:w-3/4 flex justify-end mt-8 md:mt-0 ">
+    <section
+      class="min-h-screen flex flex-col md:flex-row px-4 md:px-16 bg-[#0f1234] py-12 md:py-0">
+      <div class="flex flex-col md:flex-row items-center w-full">
+        <div class="w-full md:w-3/4 flex justify-center md:justify-end order-2 md:order-1">
           <img
             src="assets/FocusMockup.png"
             alt="focus session preview mockup"
-            class="object-cover overflow-visible"/>
+            class="w-full max-w-lg md:max-w-full object-contain" />
         </div>
 
-        <!-- Text on the right -->
-        <div class="w-1/3 md:w-1/3  mt-40 flex-col">
-          <h1 class="text-white text-6xl text-center font-readex-pro font-bold">FEATURES</h1>
-          <h5 class="font-readex-pro font-extralight text-center pt-8">
-            - Boost your productivity with focus sessions invite friends and gain
+        <div class="w-full md:w-1/3 mb-8 md:mb-0 order-1 md:order-2">
+          <h1 class="text-4xl md:text-6xl text-center font-readex-pro font-bold mb-6">FEATURES</h1>
+          <h5 class="font-readex-pro font-extralight text-center px-4 md:px-8">
+            -Boost your productivity with focus sessions invite friends and gain
             <span class="text-purple-600 font-bold">Aura Points</span>
             together.
-          </h5>
+          </h 5>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="info-con">
+    <section id="contact" class="contact px-4 md:px-16 py-12">
+      <div class="info-con text-center md:text-left">
         <div class="heading">
-          <h1>Be the First to Experience AuraHub</h1>
+          <h1 class="text-3xl md:text-4xl mb-4">Be the First to Experience AuraHub</h1>
         </div>
-        <div class="subheading">
+        <div class="subheading text-sm md:text-base mb-8">
           While our team works on the app, you can join the waitlist to be the first to experience
           AuraHub.
         </div>
@@ -102,20 +101,24 @@
           action="https://formspree.io/f/{form_id}"
           method="post"
           id="waitlist-form"
-          class="waitlist-form">
+          class="waitlist-form flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
           <input type="email" id="user-email" placeholder="youremail@example.com" />
           <button class="font-readex-pro" type="submit" id="submitBtn">Notify Me!</button>
         </form>
       </div>
-      <div class="img-con">
-        <img src="./src/images/home-mockup.png" />
+      <!-- Change the image container visibility -->
+      <div class="img-con mt-8 md:mt-0 md:flex hidden">
+        <img src="./src/images/home-mockup.png" class="w-full max-w-md mx-auto" />
       </div>
     </section>
 
     <script src="./src/index.js"></script>
-    <footer class="footer bg-black text-white py-6 border-t border-[#191919]">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <p class="font-readex-pro text-sm">All rights reserved &copy; AuraHub</p>
+    <!-- Update footer to ensure visibility -->
+    <footer class="footer bg-black text-white py-6 px-4 border-t border-[#191919] relative z-10">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="font-readex-pro text-xs md:text-sm text-center md:text-left">
+          All rights reserved &copy; AuraHub
+        </p>
         <div class="flex space-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
