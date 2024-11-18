@@ -2,5 +2,18 @@
   "devDependencies": {
     "tailwindcss": "^3.4.15",
     "tailwindcss-motion": "^0.4.3-beta"
-  }
+  },
+  "dependencies": {
+    "appwrite": "^16.0.2",
+    "node-appwrite": "^14.1.0"
+  },
+  "name": "aurahub-landing-page",
+  "version": "1.0.0",
+  "description": "Aura Hub is a social media platform designed to boost productivity with a suite of features:",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
