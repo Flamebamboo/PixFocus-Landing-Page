@@ -1,4 +1,5 @@
 export default async ({ req, res, log, error }) => {
-  const KEY = rew.headers("x-appwrite-key");
-  return res.text(KEY);
+  if (req.method == "GET") {
+    return res.send("helloword");
+  }
 };

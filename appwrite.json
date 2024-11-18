@@ -54,6 +54,59 @@
             "entrypoint": "main.js",
             "commands": "npm install",
             "path": "functions/Waitlist"
+        },
+        {
+            "$id": "673b2b190013c8bcb6e8",
+            "execute": [
+                "any"
+            ],
+            "name": "Waitlist2.0",
+            "enabled": true,
+            "logging": true,
+            "runtime": "node-22",
+            "scopes": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15,
+            "entrypoint": "main.js",
+            "commands": "",
+            "path": "functions/Waitlist2.0"
+        },
+        {
+            "$id": "673b32d30010e1fa99ed",
+            "execute": [
+                "any"
+            ],
+            "name": "Function",
+            "enabled": true,
+            "logging": true,
+            "runtime": "node-22",
+            "scopes": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15,
+            "entrypoint": "main.js",
+            "commands": "",
+            "path": "functions/Function"
+        },
+        {
+            "$id": "673b3490000d46420059",
+            "execute": [
+                "any"
+            ],
+            "name": "Starter function",
+            "enabled": true,
+            "logging": true,
+            "runtime": "node-22",
+            "scopes": [
+                "users.read"
+            ],
+            "events": [],
+            "schedule": "",
+            "timeout": 15,
+            "entrypoint": "src/main.js",
+            "commands": "npm install",
+            "path": "functions/Starter function"
         }
     ],
     "databases": [
