@@ -1,21 +1,48 @@
-# Aura Hub
+# ⚡ Node.js Starter Function
 
-Aura Hub is a social media platform designed to boost productivity with a suite of features:
+A simple starter function. Edit `src/main.js` to get started and create something awesome! 🚀
 
-## Features
+## 🧰 Usage
 
-- **Real-time Communication**: Connect and communicate with others instantly.
-- **Flashcards**: Create and share flashcards with a scrolling mechanism.
-- **Focus Timers**: Boost your productivity with focus timers.
-- **Hubs**: Use focus timers together and share educational resources, similar to Discord servers.
+### GET /ping
 
-Additionally, Aura Hub includes an innovative feature to manage screen time:
+- Returns a "Pong" message.
 
-- **Screen Time Management**: Block certain apps to manage your screen time. Share your screen time usage with friends or followers to encourage mindful device use.
+**Response**
 
-## Screenshots
+Sample `200` Response:
 
-![Aura Hub Home](/assets/HomePage.png)
-![Navigation Route](/assets/NavigationRoute.png)
+```text
+Pong
+```
 
-As a solo developer, I aim to keep the scope manageable but have more features planned for future updates.
+### GET, POST, PUT, PATCH, DELETE /
+
+- Returns a "Learn More" JSON response.
+
+**Response**
+
+Sample `200` Response:
+
+```json
+{
+  "motto": "Build like a team of hundreds_",
+  "learn": "https://appwrite.io/docs",
+  "connect": "https://appwrite.io/discord",
+  "getInspired": "https://builtwith.appwrite.io"
+}
+```
+
+## ⚙️ Configuration
+
+| Setting           | Value         |
+| ----------------- | ------------- |
+| Runtime           | Node (18.0)   |
+| Entrypoint        | `src/main.js` |
+| Build Commands    | `npm install` |
+| Permissions       | `any`         |
+| Timeout (Seconds) | 15            |
+
+## 🔒 Environment Variables
+
+No environment variables required.

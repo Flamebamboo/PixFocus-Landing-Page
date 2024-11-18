@@ -1,6 +1,16 @@
 {
+  "name": "starter-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "node-appwrite": "^12.0.1"
+  },
   "devDependencies": {
-    "tailwindcss": "^3.4.15",
-    "tailwindcss-motion": "^0.4.3-beta"
+    "prettier": "^3.2.5"
   }
 }
