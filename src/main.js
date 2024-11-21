@@ -1,4 +1,4 @@
-import { Client, Users } from 'node-appwrite';
+import { Client, Users } from "node-appwrite";
 
 // This Appwrite function will be executed every time your function is triggered
 export default async ({ req, res, log, error }) => {
@@ -7,7 +7,7 @@ export default async ({ req, res, log, error }) => {
   const client = new Client()
     .setEndpoint(process.env.APPWRITE_FUNCTION_API_ENDPOINT)
     .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID)
-    .setKey(req.headers['x-appwrite-key'] ?? '');
+    .setKey(req.headers["x-appwrite-key"] ?? "");
   const users = new Users(client);
 
   try {
@@ -15,7 +15,7 @@ export default async ({ req, res, log, error }) => {
     // Log messages and errors to the Appwrite Console
     // These logs won't be seen by your end users
     log(`Total users: ${response.total}`);
-  } catch(err) {
+  } catch (err) {
     error("Could not list users: " + err.message);
   }
 
@@ -30,6 +30,15 @@ export default async ({ req, res, log, error }) => {
     motto: "Build like a team of hundreds_",
     learn: "https://appwrite.io/docs",
     connect: "https://appwrite.io/discord",
-    getInspired: "https://builtwith.appwrite.io",
+    getInspired: "https://builtwith.appwrite.io"
   });
 };
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});

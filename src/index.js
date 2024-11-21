@@ -1,10 +1,25 @@
+// Update scroll threshold for dynamic island effect
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
   if (window.scrollY > 50) {
-    navbar.classList.add("bg-color");
+    navbar.classList.add("navbar-scrolled");
   } else {
-    navbar.classList.remove("bg-color");
+    navbar.classList.remove("navbar-scrolled");
   }
+});
+
+// Add smooth scroll behavior for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
 });
 
 const words = ["students", "professionals"];
@@ -31,13 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function move() {
     curX += (tgX - curX) / 20;
     curY += (tgY - curY) / 20;
-    interBubble.style.transform = `translate(${Math.round(
-      curX
-    )}px, ${Math.round(curY)}px)`;
+    interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
     requestAnimationFrame(move);
   }
 
-  window.addEventListener("mousemove", (event) => {
+  window.addEventListener("mousemove", event => {
     tgX = event.clientX;
     tgY = event.clientY;
   });
@@ -45,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   move();
 });
 
-document.querySelectorAll("button").forEach((button) => {
+document.querySelectorAll("button").forEach(button => {
   button.addEventListener("click", function (e) {
     let ripple = document.createElement("span");
     ripple.classList.add("ripple");
