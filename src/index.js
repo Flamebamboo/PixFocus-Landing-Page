@@ -1,13 +1,3 @@
-// Update scroll threshold for dynamic island effect
-window.addEventListener("scroll", function () {
-  const navbar = document.getElementById("navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("navbar-scrolled");
-  } else {
-    navbar.classList.remove("navbar-scrolled");
-  }
-});
-
 // Add smooth scroll behavior for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
@@ -73,5 +63,44 @@ document.querySelectorAll("button").forEach(button => {
     setTimeout(() => {
       ripple.remove();
     }, 600);
+  });
+});
+
+//codes runs when dom is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const textElement = document.getElementById("revealText");
+  const words = textElement.textContent.trim().split(/\s+/);
+
+  // Replace text content with individually wrapped words
+  textElement.innerHTML = words
+    .map((word, index) => `<span class="word" data-index="${index}">${word}</span>`)
+    .join(" ");
+
+  const spans = textElement.querySelectorAll(".word");
+
+  // Function to calculate scroll percentage
+  const getScrollPercentage = () => {
+    return (
+      ((window.pageYOffset || document.documentElement.scrollTop) /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      50
+    );
+  };
+
+  // Scroll event listener for gradual reveal
+  window.addEventListener("scroll", () => {
+    const scrollPercentage = getScrollPercentage();
+
+    spans.forEach(span => {
+      const index = parseInt(span.dataset.index);
+      const wordPercentage = (index / spans.length) * 30;
+
+      // Reveal words progressively based on scroll percentage
+      if (scrollPercentage > wordPercentage) {
+        span.classList.add("visible");
+      } else {
+        span.classList.remove("visible");
+      }
+    });
   });
 });

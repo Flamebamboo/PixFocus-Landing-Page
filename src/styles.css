@@ -63,33 +63,18 @@
 }
 
 .gradient-bg .g1 {
-  background: radial-gradient(
-      circle at center,
-      rgba(var(--color1), 0.8) 0,
-      rgba(var(--color1), 0) 50%
-    )
-    no-repeat;
+  background: radial-gradient(circle at center, #1271ffcc 0, #1271ff00 50%) no-repeat;
   animation: moveVertical 30s ease infinite;
 }
 
 .gradient-bg .g2 {
-  background: radial-gradient(
-      circle at center,
-      rgba(var(--color2), 0.8) 0,
-      rgba(var(--color2), 0) 50%
-    )
-    no-repeat;
+  background: radial-gradient(circle at center, #dd4affcc 0, #dd4aff00 50%) no-repeat;
   animation: moveInCircle 20s reverse infinite;
 }
 
 .gradient-bg .interactive {
   position: absolute;
-  background: radial-gradient(
-      circle at center,
-      rgba(var(--color-interactive), 0.8) 0,
-      rgba(var(--color-interactive), 0) 50%
-    )
-    no-repeat;
+  background: radial-gradient(circle at center, #8c64ffcc 0, #8c64ff00 50%) no-repeat;
   width: 100%;
   height: 100%;
   top: -50%;
@@ -130,7 +115,7 @@
   border-radius: 50%;
   transform: scale(0);
   animation: ripple 0.6s linear;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #ffffffb3;
 }
 
 /* Contact section */
@@ -381,18 +366,18 @@
 /* Container positioning */
 .nav-container {
   position: fixed;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(300px, 90%, 400px);
+  width: 70%;
   z-index: 1000;
 }
 
 /* Main navigation bar */
 .dynamic-island {
-  --island-bg: rgba(0, 0, 0, 0.8);
-  --island-border: rgba(255, 255, 255, 0.1);
-  --hover-translate: -2px;
+  --island-bg: #00000050;
+  --island-border: #ffffff1a;
+  --hover-translate: -5px;
 
   background-color: var(--island-bg);
   backdrop-filter: blur(12px);
@@ -409,8 +394,8 @@
 
 .dynamic-island:hover {
   transform: translateY(var(--hover-translate));
-  background-color: rgba(0, 0, 0, 0.9);
-  border-color: rgba(255, 255, 255, 0.2);
+  background-color: #000000e6;
+  border-color: #ffffff33;
 }
 
 /* Brand styling */
@@ -500,4 +485,47 @@
 
 .nav-container {
   animation: slideDown 0.5s ease-out forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.scroll-container {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #000;
+  padding: 40px;
+
+  text-align: center;
+}
+#revealText {
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: #ffffff;
+  text-align: center;
+  margin: 30px auto;
+  width: 80%;
+}
+.word {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: inline-block;
+}
+.word.visible {
+  opacity: 1;
 }
