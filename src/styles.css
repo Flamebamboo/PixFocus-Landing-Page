@@ -154,7 +154,9 @@
 .contact .info-con .heading h1 {
   font-size: 200%;
   color: rgb(222, 214, 255);
-  animation: typing 4s steps(22) infinite, blink 0.5s step-end infinite alternate;
+  animation:
+    typing 4s steps(22) infinite,
+    blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
