@@ -1,44 +1,42 @@
 import { Client, Users } from "node-appwrite";
 
+const ENDPOINT = import.meta.env.VITE_ENDPOINT;
+const PROJECT_ID = import.meta.env.VITE_PROJECT_ID;
+const DATABASE_ID = import.meta.env.VITE_DATABASE_ID;
+const COLLECTION_ID = import.meta.env.VITE_COLLECTION_ID;
 // This Appwrite function will be executed every time your function is triggered
 export default async ({ req, res, log, error }) => {
   // You can use the Appwrite SDK to interact with other services
   // For this example, we're using the Users service
-  const client = new Client()
-    .setEndpoint(process.env.APPWRITE_FUNCTION_API_ENDPOINT)
-    .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID)
-    .setKey(req.headers["x-appwrite-key"] ?? "");
-  const users = new Users(client);
-
   try {
-    const response = await users.list();
-    // Log messages and errors to the Appwrite Console
-    // These logs won't be seen by your end users
-    log(`Total users: ${response.total}`);
-  } catch (err) {
-    error("Could not list users: " + err.message);
-  }
+    const client = new Client()
+      .setEndpoint(process.env.APPWRITE_FUNCTION_API_ENDPOINT)
+      .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID)
+      .setKey(req.headers["x-appwrite-key"] ?? "");
 
-  // The req object contains the request data
-  if (req.path === "/ping") {
-    // Use res object to respond with text(), json(), or binary()
-    // Don't forget to return a response!
-    return res.text("Pong");
-  }
+    // Initialize messaging
+    const messaging = new Messaging(client);
+    const payload = JSON.parse(req.payload);
+    const email = payload.email;
 
-  return res.json({
-    motto: "Build like a team of hundreds_",
-    learn: "https://appwrite.io/docs",
-    connect: "https://appwrite.io/discord",
-    getInspired: "https://builtwith.appwrite.io"
-  });
+    // Create and send email
+    const message = await messaging.createEmail(
+      `welcome-${Date.now()}`, // Unique message ID
+      "Welcome to AuraHub!", // Subject
+      "Thank you for joining our waitlist.", // Content
+      [], // topics
+      [], // users
+      [email], // targets
+      [], // cc
+      [], // bcc
+      false, // draft
+      true, // html
+      "" // scheduledAt
+    );
+
+    res.json({ success: true, message });
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false, error: error.message });
+  }
 };
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});

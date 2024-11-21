@@ -78,18 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const spans = textElement.querySelectorAll(".word");
 
-  // Function to calculate scroll percentage
-  const getScrollPercentage = () => {
-    return (
-      ((window.pageYOffset || document.documentElement.scrollTop) /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      50
-    );
-  };
-
   // Scroll event listener for gradual reveal
   window.addEventListener("scroll", () => {
-    const scrollPercentage = getScrollPercentage();
+    const scrollPercentage =
+      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 40;
 
     spans.forEach(span => {
       const index = parseInt(span.dataset.index);

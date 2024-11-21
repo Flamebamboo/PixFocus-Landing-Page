@@ -14,7 +14,7 @@
   </head>
 
   <!-- Body -->
-  <body class="bg-gradient-to-r from-[#1A1A1D] to-[#000B58] text-white">
+  <body class="bg-black text-white">
     <!-- Navbar -->
 
     <div class="nav-container">
@@ -33,7 +33,7 @@
     <!-- Hero Section -->
     <section
       id="hero"
-      class="min-h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left pt-32 md:pt-24 px-4 md:px-16">
+      class="bg-gradient-to-r from-[#1A1A1D] to-[#000B58] text-white min-h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left pt-32 md:pt-24 px-4 md:px-16">
       <div class="gradient-bg">
         <div class="gradients-container">
           <div class="gradient g1"></div>
@@ -73,7 +73,7 @@
     <!-- FEATURE 1 -->
     <section
       id="features"
-      class="block min-h-screen flex flex-col md:flex-row px-4 md:px-16 bg-black py-12 md:py-0">
+      class="min-h-screen flex flex-col md:flex-row px-4 md:px-16 py-12 md:py-0">
       <div class="flex flex-col md:flex-row items-center w-full">
         <div class="w-full md:w-3/4 flex justify-center md:justify-end order-2 md:order-1">
           <img
@@ -82,8 +82,10 @@
             class="w-full max-w-lg md:max-w-full object-contain" />
         </div>
 
-        <div class="w-full md:w-1/3 mb-8 md:mb-0 order-1 md:order-2">
-          <h1 class="text-4xl md:text-6xl text-center font-readex-pro font-bold mb-6">FEATURES</h1>
+        <div class="borders p-6 md:p-8 w-full md:w-1/3 mb-8 md:mb-0 order-1 md:order-2">
+          <h1 class="text-4xl md:text-6xl text-center font-readex-pro font-bold mb-6 masked">
+            FEATURES
+          </h1>
           <h5 class="font-readex-pro font-extralight text-center px-4 md:px-8">
             -Boost your productivity with focus sessions invite friends and gain
             <span class="text-purple-600 font-bold">Aura Points</span>
@@ -96,9 +98,9 @@
     <section class="min-h-screen flex flex-col">
       <div class="scroll-container">
         <p id="revealText" class="font-readex-pro">
-          1: Allow users to start shared focus streaks with friends, where users in the “Hubs” has
-          to complete a focus sessions daily for the group streak to continue. This feature would
-          add a sense of accountability, as missing a day would affect everyone in the group.
+          Allow users to start shared focus streaks with friends, where users in the “Hubs” has to
+          complete a focus sessions daily for the group streak to continue. This feature would add a
+          sense of accountability, as missing a day would affect everyone in the group.
         </p>
       </div>
     </section>
@@ -115,12 +117,10 @@
           AuraHub.
         </div>
         <form
-          action="https://formspree.io/f/{form_id}"
-          method="post"
           id="waitlist-form"
           class="waitlist-form flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
-          <input type="email" id="user-email" placeholder="youremail@example.com" />
-          <button class="font-readex-pro" type="submit" id="submitBtn">Notify Me!</button>
+          <input type="email" id="user-email" placeholder="youremail@example.com" required />
+          <button type="submit" id="submitBtn">Notify Me!</button>
         </form>
       </div>
       <!-- Change the image container visibility -->
@@ -129,7 +129,6 @@
       </div>
     </section>
 
-    <script src="./src/index.js"></script>
     <!-- Update footer to ensure visibility -->
     <footer class="footer bg-black text-white py-6 px-4 border-t border-[#191919] relative z-10">
       <div
@@ -226,5 +225,9 @@
         </div>
       </div>
     </footer>
+
+    <script src="./src/index.js"></script>
+
+    <script type="module" src="./src/waitlist.js"></script>
   </body>
 </html>
