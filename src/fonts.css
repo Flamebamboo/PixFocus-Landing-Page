@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "ReadexPro";
+  src: url("/src/assets/fonts/ReadexProSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "M5x7";
+  src: url("/src/assets/fonts/M5x7.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
