@@ -4,6 +4,13 @@ import Home from "./components/Home";
 
 // Main App Component
 const App = () => {
+  const scrollToSection = sectionId => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Router>
       <div className="bg-black text-white">
@@ -16,9 +23,23 @@ const App = () => {
               </a>
             </div>
             <div className="nav-content">
-              <a href="#hero">Home</a>
-              <a href="#features">Features</a>
-              <a href="#contact">TestFlight</a>
+              <a
+                href="#"
+                onClick={e => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}>
+                Home
+              </a>
+              <a
+                href="#"
+                onClick={e => {
+                  e.preventDefault();
+                  scrollToSection("preview");
+                }}>
+                Preview
+              </a>
+              <a href="https://testflight.apple.com/join/CCvp6EAS">TestFlight</a>
             </div>
           </nav>
         </div>
