@@ -20,7 +20,11 @@ const Timer = () => {
         {/* Phone Frame */}
         <div className="w-[280px] h-[570px] bg-white border-6 border-white rounded-[35px] overflow-hidden relative shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-1">
           <div className="absolute top-0 w-32 h-6 bg-white left-1/2 -translate-x-1/2 rounded-b-2xl"></div>
-          <img src="/images/Timer.png" alt="Timer Preview" className="w-full h-full object-cover" />
+          <img
+            src="/images/Timer.jpeg"
+            alt="Timer Preview"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Right Bullet Points */}

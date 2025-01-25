@@ -13,8 +13,6 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "appwrite": "^14.0.1",
-    "node-appwrite": "^12.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.3",
