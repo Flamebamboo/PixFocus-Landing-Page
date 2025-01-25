@@ -31,7 +31,7 @@ const Home = () => {
             {/* App Preview Image */}
             <div className="hidden md:block">
               <img
-                src="/src/images/home-mockup.png"
+                src="/images/home-mockup.png"
                 alt="AuraHub App Preview"
                 className="w-full h-auto max-w-lg mx-auto drop-shadow-2xl"
               />
