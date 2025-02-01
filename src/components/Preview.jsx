@@ -8,20 +8,22 @@ import Shop from "./Shop";
 const Preview = () => {
   const [currentPreview, setCurrentPreview] = useState("timer");
   return (
-    <section className=" flex flex-col items-center justify-center bg-[#FAF1FF] pt-12">
+    <section className="flex flex-col items-center justify-center bg-[#FAF1FF] pt-6 sm:pt-12">
       {/* Preview Header */}
-      <div className="bg-[#B4E4FF] px-6 sm:px-12 md:px-24 lg:px-32 py-6 sm:py-8 rounded-2xl mb-3 border-6 border-black w-[85%] sm:w-[75%] md:w-auto mx-auto">
-        <h1 className="text-black text-xl sm:text-2xl font-[ReadexPro] text-center">PREVIEW</h1>
+      <div className="bg-[#B4E4FF] px-4 sm:px-12 md:px-24 lg:px-32 py-4 sm:py-6 rounded-xl sm:rounded-2xl mb-3 border-4 sm:border-6 border-black w-[90%] sm:w-[85%] md:w-auto mx-auto">
+        <h1 className="text-black text-lg sm:text-xl md:text-2xl font-[ReadexPro] text-center">
+          PREVIEW
+        </h1>
       </div>
       {/* Description */}
-      <p className="text-black text-3xl font-[M5x7] mb-6 text-center">
-        PixFocus was designed to make productivity fun with <br></br>neo-brutalism theme and pixel
-        art
+      <p className="text-black text-2xl sm:text-3xl font-[M5x7] mb-4 sm:mb-6 text-center px-4">
+        PixFocus was designed to make productivity fun with
+        <br className="hidden sm:block" /> neo-brutalism theme and pixel art
       </p>
 
-      <div className="flex-1 flex-col rounded-t-full pt-10 bg-[#9482DA] w-full h-full flex items-center justify-center transition-opacity duration-300 ease-in-out">
+      <div className="flex-1 flex-col rounded-t-[2.5rem] sm:rounded-t-full pt-6 sm:pt-10 bg-[#9482DA] w-full h-full flex items-center justify-center transition-opacity duration-300 ease-in-out">
         {/* Navigation */}
-        <div className="flex gap-8 mb-12">
+        <div className="flex gap-4 sm:gap-8 mb-8 sm:mb-12">
           <button
             className={`text-black text-2xl font-[ReadexPro] transition-all duration-300 ${currentPreview === "timer" ? "opacity-100 border-b-2 border-black" : "opacity-50 hover:opacity-75"}`}
             onClick={() => setCurrentPreview("timer")}>

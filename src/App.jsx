@@ -15,7 +15,12 @@ const App = () => {
     <Router>
       <div className="bg-black text-white">
         {/* Navbar */}
-        <div className="nav-container">
+
+        <div
+          className="fixed top-2.5 left-1/2 transform -translate-x-1/2 w-11/12 max-w-4xl z-50 transition-all duration-300 ease-in-out
+                    sm:w-10/12 
+                    md:w-3/4 
+                    lg:w-2/3">
           <nav className="dynamic-island">
             <div className="brand">
               <a href="#" className="logo">

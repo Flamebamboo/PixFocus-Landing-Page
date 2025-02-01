@@ -1,13 +1,5 @@
 /* Container positioning */
 @import "tailwindcss";
-.nav-container {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  z-index: 1000;
-}
 
 /* Main navigation bar */
 .dynamic-island {
