@@ -3,6 +3,7 @@ import { Mail } from "lucide-react";
 import { Client, Databases, Functions, ID } from "appwrite";
 import Modal from "./Modal";
 
+//https://cloud.appwrite.io/v1
 const ENDPOINT = "https://cloud.appwrite.io/v1";
 const PROJECT_ID = "673badb700335c03fcf5";
 const DATABASE_ID = "673f0372000cb7da8e45";
