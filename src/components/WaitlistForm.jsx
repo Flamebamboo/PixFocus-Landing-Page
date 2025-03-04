@@ -4,6 +4,7 @@ import { Client, Databases, Functions, ID } from "appwrite";
 import Modal from "./Modal";
 
 //https://cloud.appwrite.io/v1
+// i also dont care if u wanna do shit with this ID its already been exposed on my old commits....
 const ENDPOINT = "https://cloud.appwrite.io/v1";
 const PROJECT_ID = "673badb700335c03fcf5";
 const DATABASE_ID = "673f0372000cb7da8e45";
