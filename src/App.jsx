@@ -44,7 +44,14 @@ const App = () => {
                 }}>
                 Preview
               </a>
-              <a href="https://testflight.apple.com/join/CCvp6EAS">TestFlight</a>
+              <a
+                href="#"
+                onClick={e => {
+                  e.preventDefault(); //preventDefault in simpler terms mean
+                  window.scrollToSection("demo");
+                }}>
+                Download
+              </a>
             </div>
           </nav>
         </div>

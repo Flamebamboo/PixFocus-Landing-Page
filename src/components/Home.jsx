@@ -2,40 +2,58 @@ import React, { useState } from "react";
 import Preview from "./Preview";
 import Footer from "./Footer";
 import "../styles/noise.css";
-import { Clock, Sliders, Mail } from "lucide-react";
+import { Clock, Sliders, Mail, Youtube } from "lucide-react";
 import WaitlistForm from "./WaitlistForm";
+import hero from "/images/HeroImage.jpg";
 
 const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-linear-120 from-black from-10% via-[#7C3FFF] via-70% to-[#C05DEF] text-white min-h-screen overflow-hidden">
-        <div className="noise"></div>
+      <section className="bg-black text-white min-h-screen overflow-hidden relative">
+        {/* Background image container */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${hero})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            opacity: 0.8
+          }}></div>
+
+        {/* Noise effect overlay */}
+        <div className="absolute inset-0 noise z-10"></div>
+
         {/* Content Container */}
-        <div className="z-10 container mx-auto px-4 h-screen flex items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
+        <div className="relative z-20 container mx-auto px-4 h-screen flex items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
+            {/* Empty left column */}
+            <div className="hidden md:block"></div>
+
+            {/* Text Content - Right column */}
             <div className="text-center md:text-left">
               <h1 className="font-[ReadexPro] text-5xl md:text-6xl lg:text-7xl mb-6">Gamified focus timer app</h1>
               <p className="lg:text-3xl text-2xl mb-8 font-[M5x7] opacity-90">
                 Pomodoro, Timeblock with amazing pixel art visual timers
               </p>
-              <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+              <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <button
-                  onClick={() => window.open("https://testflight.apple.com/join/CCvp6EAS", "_blank")}
-                  className="bg-[#CFEE2E] border-4 text-black px-8 py-4 rounded-full font-[ReadexPro] shadow-lg transition-colors duration-300 hover:bg-[#ADCE00] hover:text-black">
-                  Download Pixfocus TestFlight Now!
+                  // onClick={() => window.open("https://apps.apple.com/app/pixfocus", "_blank")}
+                  className="bg-[#CFEE2E] border-4 text-black px-6 py-4 rounded-full font-[ReadexPro] shadow-lg transition-transform duration-300 hover:bg-[#ADCE00] hover:-translate-y-1 hover:shadow-xl">
+                  Get on App Store(soon)
+                </button>
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://chromewebstore.google.com/detail/hdndbhnidlhphocggjbhdpeeaiehmadh?utm_source=item-share-cb",
+                      "_blank"
+                    )
+                  }
+                  className="bg-[#B4E4FF] border-4 text-black px-6 py-4 rounded-full font-[ReadexPro] shadow-lg transition-transform duration-300 hover:bg-[#8ED4FF] hover:-translate-y-1 hover:shadow-xl">
+                  Chrome Extension (beta)
                 </button>
               </div>
-            </div>
-
-            {/* App Preview Image */}
-            <div className="hidden md:block">
-              <img
-                src="/images/home-mockup.png"
-                alt="AuraHub App Preview"
-                className="w-full h-auto max-w-lg mx-auto drop-shadow-2xl"
-              />
             </div>
           </div>
         </div>
@@ -44,6 +62,28 @@ const Home = () => {
       <section id="preview">
         <Preview />
       </section>
+
+      {/* <section id="demo" className="bg-[#9482DA] py-16 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-6xl md:text-8xl text-white text-center mb-8 font-[M5x7]">See PixFocus in Action</h2>
+          <p className="text-center text-gray-300 font-[ReadexPro] text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+            Watch how PixFocus helps you stay productive with its pixel art inspired timers and gamified focus
+            techniques
+          </p>
+
+          <div className="relative w-full max-w-4xl mx-auto aspect-video mb-12">
+            <div className="border-8 border-black rounded-2xl overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-[#B4E4FF]">
+              <iframe
+                className="w-full h-full aspect-video"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="PixFocus Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen></iframe>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
       <section className="bg-[#F6EA96]">
         <div className="grid lg:grid-cols-2 grid-rows min-h-[70vh] gap-4 px-4 py-8 md:py-4">
           <div className="flex items-center justify-center flex-col">
@@ -102,6 +142,44 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* Platform Availability Section */}
+      <section className="bg-[#FAF1FF] py-16 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-6xl md:text-8xl text-black text-center mb-8 font-[M5x7]">Available On</h2>
+
+          {/* Large Platform Image */}
+          <div className="relative w-full max-w-5xl mx-auto mb-12">
+            <div className="border-6 border-black rounded-2xl overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 transform hover:-translate-y-1">
+              <img
+                src="/images/displaystore_4.png"
+                alt="PixFocus available on iOS and as Chrome Extension"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
+          {/* Call to Action Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <button
+              // onClick={() => window.open("https://testflight.apple.com/join/CCvp6EAS", "_blank")}
+              className="bg-[#CFEE2E] border-4 text-black px-6 py-3 rounded-full font-[ReadexPro] shadow-lg transition-colors duration-300 hover:bg-[#ADCE00] flex items-center justify-center gap-2">
+              Get on App Store(soon)
+            </button>
+
+            <button
+              onClick={() =>
+                window.open(
+                  "https://chromewebstore.google.com/detail/hdndbhnidlhphocggjbhdpeeaiehmadh?utm_source=item-share-cb",
+                  "_blank"
+                )
+              }
+              className="bg-[#B4E4FF] border-4 text-black px-6 py-3 rounded-full font-[ReadexPro] shadow-lg transition-colors duration-300 hover:bg-[#8ED4FF] flex items-center justify-center gap-2">
+              Get On Chrome Extension (beta)
+            </button>
+          </div>
+        </div>
+      </section>
+
       <WaitlistForm />
       <Footer />
     </>
